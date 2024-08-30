@@ -1,4 +1,4 @@
-import { getPages } from '../utils/storage';
+import { getPages } from '../utils/storage.js';
 
 export class NavBar extends HTMLElement {
     constructor() {
@@ -15,6 +15,8 @@ export class NavBar extends HTMLElement {
         const links = pages.map(page => `
             <a href="${page.path}" class="nav-link">${page.title}</a>
         `).join('');
+
+        if(this.shadowRoot === null || this.shadowRoot.innerHTML === null) { return; }
 
         this.shadowRoot.innerHTML = `
             <style>

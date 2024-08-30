@@ -1,7 +1,6 @@
-import { Router } from './components/Router';
-import { NavBar } from './components/NavBar';
-import { PageContent } from './components/PageContent';
-import { getPages } from './utils/storage';
+import { Router } from './components/Router.js';
+import { PageContent } from './components/PageContent.js';
+import { getPages } from './utils/storage.js';
 
 async function initializeApp() {
     const router = new Router();

@@ -7,6 +7,8 @@ export class PageContent extends HTMLElement {
     connectedCallback() {
         const title = this.getAttribute('title') || '';
         const content = this.getAttribute('content') || '';
+        
+        if(this.shadowRoot === null || this.shadowRoot.innerHTML === null) { return; }
 
         this.shadowRoot.innerHTML = `
             <style>

@@ -2,11 +2,12 @@
   "name": "wc-web-app-template-03",
   "version": "0.0.0",
   "description": "A Lightweight SPA with PWA and SEO Friendly Features, using only plain vanilla TypeScript and JavaScript, Native HTML5 Web Components, and Native HTML5 API's",
+  "type": "module",
   "main": "dist/app.js",
   "scripts": {
     "start": "http-server dist",
     "build": "node scripts/build.js",
-    "dev": "tsc -w & http-server src"
+    "dev": "concurrently \"tsc -w\" \"http-server -c-1 .\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/kbdavis07/wc-web-app-template-03#readme",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "http-server": "^14.1.1",
     "typescript": "^5.5.4"
   }

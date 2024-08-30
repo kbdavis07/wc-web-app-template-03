@@ -29,8 +29,12 @@ export class Router extends HTMLElement {
         
         if (Component && this.currentRoute !== path) {
             this.currentRoute = path;
-            this.shadowRoot.innerHTML = '';
-            this.shadowRoot.appendChild(new Component());
+            if (this.shadowRoot) {
+                this.shadowRoot.innerHTML = '';
+            }
+            if (this.shadowRoot) {
+                this.shadowRoot.appendChild(new Component());
+            }
             this.updateActiveLink();
         }
     }

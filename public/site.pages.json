@@ -1,0 +1,28 @@
+{
+    "pages": [
+      {
+        "name": "home",
+        "title": "Home",
+        "path": "/",
+        "content": "Welcome to our SPA PWA! This is the home page where you can provide an overview of your application or website."
+      },
+      {
+        "name": "about",
+        "title": "About",
+        "path": "/about",
+        "content": "This is the About page. Here you can provide information about yourself, your company, or your project."
+      },
+      {
+        "name": "resume",
+        "title": "Resume",
+        "path": "/resume",
+        "content": "This is the Resume page. You can list your professional experience, skills, education, and achievements here."
+      },
+      {
+        "name": "contact",
+        "title": "Contact",
+        "path": "/contact",
+        "content": "This is the Contact page. You can provide your contact information or a contact form here."
+      }
+    ]
+  }
