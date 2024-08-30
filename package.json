@@ -7,7 +7,8 @@
   "scripts": {
     "start": "http-server dist",
     "build": "node scripts/build.js",
-    "dev": "concurrently \"tsc -w\" \"http-server -c-1 .\""
+    "dev": "concurrently \"tsc -w\" \"http-server -c-1 .\"",
+    "dev2": "concurrently \"tsc -w\" \"web-dev-server --node-resolve --open --watch\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   },
   "homepage": "https://github.com/kbdavis07/wc-web-app-template-03#readme",
   "devDependencies": {
+    "@web/dev-server": "^0.4.6",
+    "@web/dev-server-esbuild": "^1.0.2",
     "concurrently": "^8.2.2",
     "http-server": "^14.1.1",
     "typescript": "^5.5.4"
