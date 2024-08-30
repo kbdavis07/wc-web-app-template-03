@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-const { exec } = require('child_process');
+import { exec } from 'child_process';
+import { fileURLToPath } from 'url';
 
 function buildProject() {
     // Compile TypeScript
@@ -9,8 +10,13 @@ function buildProject() {
             console.error(`TypeScript compilation error: ${error}`);
             return;
         }
+        console.log('TypeScript compiled successfully');
 
-        console.log('TypeScript compiled successfully, now getting ready to build the project');
+        // Get the directory name
+        const __filename = fileURLToPath(import.meta.url);
+        const __dirname = path.dirname(__filename);
+        
+        console.log(__dirname);
 
         // Combine CSS files
         const cssDir = path.join(__dirname, '..', 'public', 'styles');
@@ -31,12 +37,8 @@ function buildProject() {
             path.join(__dirname, '..', 'public', 'manifest.json'),
             path.join(__dirname, '..', 'dist', 'manifest.json')
         );
-        fs.copyFileSync(
-            path.join(__dirname, '..', 'public', 'service-worker.js'),
-            path.join(__dirname, '..', 'dist', 'service-worker.js')
-        );
 
-        console.log('Build completed successfully');
+        console.log('Build has completed successfully');
     });
 }
 
